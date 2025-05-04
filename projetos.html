@@ -31,15 +31,19 @@
     }
     .menu-mobile {
       display: none;
-    }
-    .menu-mobile.open {
-      display: block;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: #0a3d62;
+      padding: 10px 0;
     }
     .menu-mobile a {
+      padding: 10px;
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
       display: block;
-      margin: 10px 0;
     }
-    /* Estilo do ícone de hambúrguer */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -119,14 +123,14 @@
       </div>
 
       <!-- Ícone de Hambúrguer para menu mobile -->
-      <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
       </div>
 
       <!-- Menu Mobile -->
-      <div class="menu-mobile">
+      <div class="menu-mobile" id="menu-mobile">
         <a href="index.html">Início</a>
         <a href="quemsomos.html">Quem Somos</a>
         <a href="servicos.html">Serviços</a>
@@ -166,7 +170,8 @@
 
   <script>
     // Função para abrir e fechar o menu mobile
-    const menuMobile = document.querySelector('.menu-mobile');
+    const menuMobile = document.getElementById('menu-mobile');
+    const hamburger = document.getElementById('hamburger');
 
     const toggleMenu = () => {
       menuMobile.classList.toggle('open');
