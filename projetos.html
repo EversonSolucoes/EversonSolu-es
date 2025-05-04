@@ -28,6 +28,16 @@
       text-decoration: none;
       font-weight: bold;
     }
+    .menu-mobile {
+      display: none;
+    }
+    .menu-mobile.open {
+      display: block;
+    }
+    .menu-mobile a {
+      display: block;
+      margin: 10px 0;
+    }
     section {
       max-width: 1000px;
       margin: auto;
@@ -58,10 +68,18 @@
       text-align: center;
       padding: 20px;
     }
+
+    /* Estilo para dispositivos móveis */
     @media (max-width: 768px) {
       .projeto {
         flex-direction: column;
         align-items: center;
+      }
+      header nav div {
+        display: none;
+      }
+      header nav .menu-mobile {
+        display: block;
       }
     }
   </style>
@@ -71,7 +89,16 @@
   <header>
     <nav>
       <div><strong>Everson Soluções</strong></div>
-      <div>
+      <div class="menu-desktop">
+        <a href="index.html">Início</a>
+        <a href="quemsomos.html">Quem Somos</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div class="menu-mobile">
         <a href="index.html">Início</a>
         <a href="quemsomos.html">Quem Somos</a>
         <a href="servicos.html">Serviços</a>
@@ -84,11 +111,11 @@
   <section>
     <h1>Projetos 2025</h1>
 
-    <div align="center"class="projeto">
+    <div align="center" class="projeto">
       <img src="exemplo-projeto1.png" alt="Projeto em uma fazenda">
       <div class="descricao">
-        <h2>Está Pagina ainda está em criação </h2>
-        <p>Em Breve mais imagens e demonstrações de serviços </p>
+        <h2>Está Página ainda está em criação</h2>
+        <p>Em Breve mais imagens e demonstrações de serviços</p>
       </div>
     </div>
 
@@ -108,6 +135,16 @@
   <footer>
     <p>© 2025 - Everson Soluções. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    // Função para abrir e fechar o menu mobile
+    const menuMobile = document.querySelector('.menu-mobile');
+    const toggleMenu = () => {
+      menuMobile.classList.toggle('open');
+    };
+
+    document.querySelector('header nav div').addEventListener('click', toggleMenu);
+  </script>
 
 </body>
 </html>
