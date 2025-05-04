@@ -21,6 +21,7 @@
       align-items: center;
       max-width: 1000px;
       margin: 0 auto;
+      position: relative;
     }
     header nav a {
       color: white;
@@ -37,6 +38,20 @@
     .menu-mobile a {
       display: block;
       margin: 10px 0;
+    }
+    /* Estilo do ícone de hambúrguer */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 24px;
+      width: 30px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      height: 4px;
+      background-color: white;
+      width: 100%;
     }
     section {
       max-width: 1000px;
@@ -75,11 +90,15 @@
         flex-direction: column;
         align-items: center;
       }
-      header nav div {
+      header nav .menu-desktop {
         display: none;
       }
       header nav .menu-mobile {
         display: block;
+      }
+      /* Mostrar o ícone de hambúrguer no modo mobile */
+      .hamburger {
+        display: flex;
       }
     }
   </style>
@@ -89,12 +108,21 @@
   <header>
     <nav>
       <div><strong>Everson Soluções</strong></div>
+
+      <!-- Menu Desktop -->
       <div class="menu-desktop">
         <a href="index.html">Início</a>
         <a href="quemsomos.html">Quem Somos</a>
         <a href="servicos.html">Serviços</a>
         <a href="projetos.html">Projetos</a>
         <a href="contato.html">Contato</a>
+      </div>
+
+      <!-- Ícone de Hambúrguer para menu mobile -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
 
       <!-- Menu Mobile -->
@@ -139,11 +167,10 @@
   <script>
     // Função para abrir e fechar o menu mobile
     const menuMobile = document.querySelector('.menu-mobile');
+
     const toggleMenu = () => {
       menuMobile.classList.toggle('open');
     };
-
-    document.querySelector('header nav div').addEventListener('click', toggleMenu);
   </script>
 
 </body>
