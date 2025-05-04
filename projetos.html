@@ -14,6 +14,9 @@
       background-color: #0a3d62;
       color: white;
       padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header nav {
       display: flex;
@@ -21,7 +24,6 @@
       align-items: center;
       max-width: 1000px;
       margin: 0 auto;
-      position: relative;
     }
     header nav a {
       color: white;
@@ -29,34 +31,54 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .menu-mobile {
+
+    /* Menu Hamburger */
+    .menu-toggle {
       display: none;
       flex-direction: column;
-      align-items: flex-start;
-      background-color: #0a3d62;
-      padding: 10px 0;
-    }
-    .menu-mobile a {
-      padding: 10px;
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      display: block;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 24px;
-      width: 30px;
       cursor: pointer;
     }
-    .hamburger div {
-      height: 4px;
+    .menu-toggle div {
       background-color: white;
-      width: 100%;
+      width: 25px;
+      height: 3px;
+      margin: 4px 0;
+      border-radius: 2px;
     }
+    .nav-links {
+      display: flex;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0a3d62;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+      }
+
+      .nav-links a {
+        margin: 15px 0;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
     section {
       max-width: 1000px;
       margin: auto;
@@ -87,50 +109,29 @@
       text-align: center;
       padding: 20px;
     }
-
-    /* Estilo para dispositivos móveis */
     @media (max-width: 768px) {
       .projeto {
         flex-direction: column;
         align-items: center;
-      }
-      header nav .menu-desktop {
-        display: none;
-      }
-      header nav .menu-mobile {
-        display: block;
-      }
-      /* Mostrar o ícone de hambúrguer no modo mobile */
-      .hamburger {
-        display: flex;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Cabeçalho -->
   <header>
     <nav>
       <div><strong>Everson Soluções</strong></div>
 
-      <!-- Menu Desktop -->
-      <div class="menu-desktop">
-        <a href="index.html">Início</a>
-        <a href="quemsomos.html">Quem Somos</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="contato.html">Contato</a>
-      </div>
-
-      <!-- Ícone de Hambúrguer para menu mobile -->
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <!-- Menu Hambúrguer -->
+      <div class="menu-toggle" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
       </div>
 
-      <!-- Menu Mobile -->
-      <div class="menu-mobile" id="menu-mobile">
+      <div class="nav-links">
         <a href="index.html">Início</a>
         <a href="quemsomos.html">Quem Somos</a>
         <a href="servicos.html">Serviços</a>
@@ -140,6 +141,7 @@
     </nav>
   </header>
 
+  <!-- Projetos -->
   <section>
     <h1>Projetos 2025</h1>
 
@@ -169,15 +171,11 @@
   </footer>
 
   <script>
-    // Função para abrir e fechar o menu mobile
-    const menuMobile = document.getElementById('menu-mobile');
-    const hamburger = document.getElementById('hamburger');
-
-    const toggleMenu = () => {
-      menuMobile.classList.toggle('open');
-      // Alternar a classe para abrir/fechar o menu
-      hamburger.classList.toggle('open');
-    };
+    // Função para abrir/fechar o menu no mobile
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
   </script>
 
 </body>
