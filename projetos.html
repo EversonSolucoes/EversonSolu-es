@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projetos | Everson Soluções</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px;
+    }
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    h1 {
+      color: #0a3d62;
+      margin-bottom: 40px;
+    }
+    .projeto {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    .projeto img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .descricao {
+      flex: 1;
+    }
+    footer {
+      background-color: #0a3d62;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .projeto {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div><strong>Everson Soluções</strong></div>
+      <div>
+        <a href="index.html">Início</a>
+        <a href="quemsomos.html">Quem Somos</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <h1>Projetos 2025</h1>
+
+    <div align="center"class="projeto">
+      <img src="exemplo-projeto1.png" alt="Projeto em uma fazenda">
+      <div class="descricao">
+        <h2>Está Pagina ainda está em criação </h2>
+        <p>Em Breve mais imagens e demonstrações de serviços </p>
+      </div>
+    </div>
+
+    <!-- Duplicar esse bloco para mais projetos -->
+    <!--
+    <div class="projeto">
+      <img src="exemplo-projeto2.jpg" alt="Outro projeto">
+      <div class="descricao">
+        <h2>Título do Projeto</h2>
+        <p>Descrição do projeto...</p>
+      </div>
+    </div>
+    -->
+
+  </section>
+
+  <footer>
+    <p>© 2025 - Everson Soluções. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

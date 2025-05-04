@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conheça os serviços oferecidos por Everson Soluções: câmeras, Wi-Fi, cabeamento e aulas para iniciantes.">
+  <title>Serviços | Everson Soluções</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1 {
+      color: #0a3d62;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .servicos {
+      display: grid;
+      gap: 20px;
+    }
+    .servico {
+      background: #f2f2f2;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .servico h2 {
+      margin-top: 0;
+      color: #0a3d62;
+    }
+    .servico-actions {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .botao-whats {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    button {
+      background: none;
+      border: none;
+      color: #0a3d62;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .detalhes {
+      display: none;
+      margin-top: 10px;
+    }
+    footer {
+      background-color: #0a3d62;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <div><strong>Everson Soluções</strong></div>
+      <div>
+        <a href="index.html">Início</a>
+        <a href="quemsomos.html">Quem Somos</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Serviços -->
+  <section>
+    <h1>Serviços Disponíveis</h1>
+    <div class="servicos">
+
+      <!-- Câmeras -->
+      <div class="servico">
+        <h2>📷 Instalação de Câmeras de Segurança</h2>
+        <p>Soluções com câmeras Wi-Fi ou cabeadas, acesso remoto pelo celular e instalação estratégica para cobertura total.</p>
+        <button onclick="toggleDetalhes(this)">🔍 Saiba Mais</button>
+        <div class="detalhes">
+          <p>As câmeras são instaladas nos pontos certos para cobrir toda a área, evitando pontos cegos. O sistema permite visualização por celular em tempo real. Indicado para residências, comércios e condomínios.</p>
+        </div>
+        <div class="servico-actions">
+          <a class="botao-whats" href="https://wa.me/5511959981418?text=Tenho%20interesse%20na%20instalação%20de%20câmeras%20de%20segurança." target="_blank">
+            📱 Falar sobre Câmeras
+          </a>
+        </div>
+      </div>
+
+      <!-- Wi-Fi -->
+      <div class="servico">
+        <h2>📡 Ampliação e Otimização de Wi-Fi</h2>
+        <p>Elimine zonas sem sinal com redes bem distribuídas. Roteadores modernos, repetidores e configuração profissional.</p>
+        <button onclick="toggleDetalhes(this)">🔍 Saiba Mais</button>
+        <div class="detalhes">
+          <p>Analiso onde o sinal está fraco e ofereço soluções como repetidores, troca de roteadores e ajuste de canais. O objetivo é que você tenha internet de qualidade em todos os ambientes.</p>
+        </div>
+        <div class="servico-actions">
+          <a class="botao-whats" href="https://wa.me/5511959981418?text=Gostaria%20de%20melhorar%20o%20sinal%20do%20Wi-Fi%20na%20minha%20casa." target="_blank">
+            📱 Falar sobre Wi-Fi
+          </a>
+        </div>
+      </div>
+
+      <!-- Cabeamento -->
+      <div class="servico">
+        <h2>🔌 Cabeamento Estruturado</h2>
+        <p>Passagem e organização de cabos para internet, TV e câmeras. Tudo limpo, discreto e funcionando perfeitamente.</p>
+        <button onclick="toggleDetalhes(this)">🔍 Saiba Mais</button>
+        <div class="detalhes">
+          <p>Organizo toda a rede com cabos de qualidade, identificados e escondidos quando possível. Ideal para empresas e casas que precisam de estabilidade e organização.</p>
+        </div>
+        <div class="servico-actions">
+          <a class="botao-whats" href="https://wa.me/5511959981418?text=Tenho%20interesse%20em%20um%20serviço%20de%20cabeamento%20estruturado." target="_blank">
+            📱 Falar sobre Cabeamento
+          </a>
+        </div>
+      </div> 
+	        <!-- serviço rural -->
+       <div class="servico">
+  <h3>🌾 Segurança no Campo</h3>
+  <p>Atendimento especializado para áreas rurais, sítios e fazendas com cobertura de internet e monitoramento à distância.</p>
+  <button onclick="toggleDetalhes(this)">🔍 Saiba Mais</button>
+        <div class="detalhes">
+          <p>Entendo como é dificil achar profissionais capacitados em areas mais afastadas do centro por isso me disponibilizo para analisar de pesto e resolver o problema </p>
+		</div>
+		 <div class="servico-actions">
+          <a class="botao-whats" href="https://wa.me/5511959981418?text=Quero%20fazer%20aulas%20para%20entender%20melhor%20como%20funciona%20a%20tecnologia." target="_blank">
+            📱 Falar Sobre Area Rural
+          </a>
+        </div>
+       </div>
+      <!-- Aulas -->
+      <div class="servico">
+        <h2>🧑‍🏫 Aulas Para Saber Mais</h2>
+        <p>Para quem sente dificuldade com tecnologia. Ensino com paciência desde como ligar um computador até usar câmeras, roteadores e celulares.</p>
+        <button onclick="toggleDetalhes(this)">🔍 Saiba Mais</button>
+        <div class="detalhes">
+          <p>Compreendo o quanto é difícil para muitos se adaptarem às novas tecnologias. Nessa aula personalizada, ensino passo a passo no seu ritmo. Ideal para pessoas mais idosas, com carinho e paciência.</p>
+        </div>
+        <div class="servico-actions">
+          <a class="botao-whats" href="https://wa.me/5511959981418?text=Quero%20fazer%20aulas%20para%20entender%20melhor%20como%20funciona%20a%20tecnologia." target="_blank">
+            📱 Falar sobre as Aulas
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 - Everson Soluções. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleDetalhes(botao) {
+      const detalhes = botao.nextElementSibling;
+      if (detalhes.style.display === "none" || detalhes.style.display === "") {
+        detalhes.style.display = "block";
+        botao.textContent = "⬆️ Mostrar Menos";
+      } else {
+        detalhes.style.display = "none";
+        botao.textContent = "🔍 Saiba Mais";
+      }
+    }
+  </script>
+
+</body>
+</html>

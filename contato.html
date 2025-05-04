@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Everson Soluções - Atendimento técnico confiável e com excelência.">
+  <title>Contato | Everson Soluções</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px;
+    }
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #0a3d62;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      text-align: center;
+    }
+    form {
+      background: #f2f2f2;
+      padding: 30px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #0a3d62;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #25D366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #1ebe5d;
+    }
+    footer {
+      background-color: #0a3d62;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <div><strong>Everson Soluções</strong></div>
+      <div>
+        <a href="index.html">Início</a>
+        <a href="quemsomos.html">Quem Somos</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo -->
+  <section>
+    <h1>Vamos conversar?</h1>
+    <p>Preencha os dados abaixo e receba meu atendimento pessoal. Sou especialista em resolver de forma simples e eficiente o que parece complicado. Com paciência e atenção, estou aqui para ajudar você a se sentir seguro e conectado.</p>
+
+    <form onsubmit="enviarParaWhatsApp(); return false;">
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" required>
+
+      <label for="endereco">Endereço (bairro ou cidade):</label>
+      <input type="text" id="endereco" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" required>
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" required>
+
+      <label for="mensagem">Escreva sua dúvida ou necessidade:</label>
+      <textarea id="mensagem" rows="5" required></textarea>
+
+      <button type="submit">📱 Enviar direto pelo WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 - Everson Soluções. Atendimento humano, técnico confiável.</p>
+  </footer>
+
+  <script>
+    function enviarParaWhatsApp() {
+      const nome = document.getElementById('nome').value;
+      const endereco = document.getElementById('endereco').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      const texto = 
+`Olá, me chamo ${nome}.
+📍 Endereço: ${endereco}
+📧 E-mail: ${email}
+📞 Telefone: ${telefone}
+
+💬 Mensagem:
+${mensagem}`;
+
+      const numero = "5511959981418";
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
