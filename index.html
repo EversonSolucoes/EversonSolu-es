@@ -26,12 +26,24 @@
       align-items: center;
       max-width: 1000px;
       margin: 0 auto;
+      flex-wrap: wrap;
     }
-    header nav a {
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
       color: white;
-      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
     }
     section {
       padding: 60px 20px;
@@ -79,13 +91,23 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
       z-index: 999;
     }
-    @media (max-width: 600px) {
-      header nav {
-        flex-direction: column;
-        align-items: flex-start;
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
       }
-      header nav a {
-        margin: 5px 0;
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .nav-links a {
+        margin: 10px 0;
+      }
+      .nav-links.active {
+        display: flex;
       }
     }
   </style>
@@ -96,7 +118,8 @@
   <header>
     <nav>
       <div><strong>Everson Soluções</strong></div>
-      <div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
         <a href="index.html">Início</a>
         <a href="quemsomos.html">Quem Somos</a>
         <a href="servicos.html">Serviços</a>
@@ -107,38 +130,30 @@
   </header>
 
   <section id="inicio">
-    
- <section style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px;">
-   <h1>Câmeras de Monitoramento Wi-Fi em toda Residência</h1>
-  <p>Você já teve aquela sensação de insegurança ao sair de casa ou ficou irritado com o sinal fraco de Wi-Fi justo quando mais precisava?</p>
-
-  <p>Esses problemas são mais comuns do que parecem — câmeras mal posicionadas, equipamentos desatualizados, redes lentas ou sem cobertura total.</p>
-
-  <p>E a verdade é que ninguém quer viver desconfiado ou limitado dentro da própria casa.</p>
-
-  <p>
-    Aqui, cada instalação é pensada exclusivamente para você. <br />
-    Analiso pessoalmente o espaço, entendo suas necessidades e entrego uma solução completa:
-    desde a instalação das câmeras com acesso remoto até o Wi-Fi cobrindo cada canto da sua residência —
-    <strong>sem pontos cegos, sem instabilidade</strong>.
-  </p>
-
-  <p style="font-size: 1.1em; margin-top: 20px;">
-    🌾 <strong>Também atuo em áreas rurais, sítios e fazendas</strong><br />
-    🎯 Soluções inteligentes, robustas e adaptadas à realidade do campo — com a mesma eficiência, organização e suporte de sempre.
-  </p>
-
-  <ul style="list-style: none; padding: 0; margin-top: 20px;">
-    <li>🔒 <strong>Segurança real.</strong></li>
-    <li>📶 <strong>Internet estável onde você precisar.</strong></li>
-    <li>💡 <strong>Tudo feito de forma discreta, organizada e com suporte de verdade.</strong></li>
-  </ul>
-
-  <p style="margin-top: 20px;"><strong>Você não precisa se preocupar com nada.</strong><br/>Só me dizer o que precisa — eu resolvo.</p>
-</section>
-
+    <section style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px;">
+      <h1>Câmeras de Monitoramento Wi-Fi em toda Residência</h1>
+      <p>Você já teve aquela sensação de insegurança ao sair de casa ou ficou irritado com o sinal fraco de Wi-Fi justo quando mais precisava?</p>
+      <p>Esses problemas são mais comuns do que parecem — câmeras mal posicionadas, equipamentos desatualizados, redes lentas ou sem cobertura total.</p>
+      <p>E a verdade é que ninguém quer viver desconfiado ou limitado dentro da própria casa.</p>
+      <p>
+        Aqui, cada instalação é pensada exclusivamente para você. <br />
+        Analiso pessoalmente o espaço, entendo suas necessidades e entrego uma solução completa:
+        desde a instalação das câmeras com acesso remoto até o Wi-Fi cobrindo cada canto da sua residência —
+        <strong>sem pontos cegos, sem instabilidade</strong>.
+      </p>
+      <p style="font-size: 1.1em; margin-top: 20px;">
+        🌾 <strong>Também atuo em áreas rurais, sítios e fazendas</strong><br />
+        🎯 Soluções inteligentes, robustas e adaptadas à realidade do campo — com a mesma eficiência, organização e suporte de sempre.
+      </p>
+      <ul style="list-style: none; padding: 0; margin-top: 20px;">
+        <li>🔒 <strong>Segurança real.</strong></li>
+        <li>📶 <strong>Internet estável onde você precisar.</strong></li>
+        <li>💡 <strong>Tudo feito de forma discreta, organizada e com suporte de verdade.</strong></li>
+      </ul>
+      <p style="margin-top: 20px;"><strong>Você não precisa se preocupar com nada.</strong><br/>Só me dizer o que precisa — eu resolvo.</p>
+    </section>
   </section>
-  
+
   <!-- SERVIÇOS -->
   <section id="servicos">
     <h2>Serviços</h2>
@@ -157,12 +172,21 @@
       </div>
     </div>
   </section>
+
   <footer>
     <p>© 2025 - Everson Soluções. Todos os direitos reservados.</p>
   </footer>
 
   <!-- Botão flutuante do WhatsApp -->
   <a href="https://wa.me/5511959981418" class="whatsapp-float" target="_blank" aria-label="WhatsApp">📱</a>
+
+  <!-- JS para menu responsivo -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
