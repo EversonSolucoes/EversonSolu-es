@@ -15,6 +15,9 @@
       background-color: #0a3d62;
       color: white;
       padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header nav {
       display: flex;
@@ -22,10 +25,24 @@
       align-items: center;
       max-width: 1000px;
       margin: 0 auto;
+      flex-wrap: wrap;
     }
-    header nav a {
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 2px solid white;
       color: white;
-      margin-left: 20px;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
@@ -85,6 +102,24 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links a {
+        margin: 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -93,7 +128,8 @@
   <header>
     <nav>
       <div><strong>Everson Soluções</strong></div>
-      <div>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰ Menu</button>
+      <div class="nav-links">
         <a href="index.html">Início</a>
         <a href="quemsomos.html">Quem Somos</a>
         <a href="servicos.html">Serviços</a>
